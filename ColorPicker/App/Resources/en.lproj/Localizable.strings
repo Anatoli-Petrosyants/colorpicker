@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  ColorPicker
+
+  Created by Anatoli Petrosyants on 11.11.24.
+  
+*/
+
+// Base
+"base.colorPicker" = "ColorPicker";
+"base.continue" = "Continue";
+"base.save" = "Save";
+"base.done" = "Done";
+"base.cancel" = "Cancel";
+"base.close" = "Close";
+"base.attention" = "Attention";
+"base.oops" = "Oops, Something went wrong";
