@@ -6,23 +6,43 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
+import XCTestDynamicOverlay
 
 @main
-struct ColorPickerApp: App {
-    @State private var changedTitle: String = "test"
+struct Showcase: App {
+
+    @UIApplicationDelegateAdaptor(AppDelegate.self) private var appDelegate
+    @Environment(\.scenePhase) private var scenePhase
     
     var body: some Scene {
         WindowGroup {
-            VStack {
-                
+            if !_XCTIsTesting {
+                AppView(store: self.appDelegate.store)
             }
-            .padding()
-            .onAppear {
-                print(Configuration.current.buildConfiguration)
-            }
+        }
+        .onChange(of: scenePhase) { (phase, _) in
+            self.appDelegate.store.send(.didChangeScenePhase(phase))
         }
     }
 }
+
+//@main
+//struct ColorPickerApp: App {
+//    @State private var changedTitle: String = "test"
+//    
+//    var body: some Scene {
+//        WindowGroup {
+//            VStack {
+//                
+//            }
+//            .padding()
+//            .onAppear {
+//                print(Configuration.current.buildConfiguration)
+//            }
+//        }
+//    }
+//}
 
 //PlayerView(title: changedTitle)
 //
