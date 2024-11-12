@@ -25,7 +25,9 @@ extension LoadingView: View {
 
     @ViewBuilder private var content: some View {
         VStack(spacing: 10) {
-            Text(Localization.Base.colorPicker).font(Font.title2)
+            Text(Localization.Base.colorPicker)
+                .font(Font.title2)
+            
             ProgressViewWrapper(progress: $store.progress)
         }
     }

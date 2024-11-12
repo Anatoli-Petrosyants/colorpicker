@@ -25,7 +25,8 @@ extension MainView: View {
     
     @ViewBuilder private var content: some View {
         ZStack {
-            Text("Main")
+            Text("Camera View")
+                .font(Font.title2)
         }
     }
 }
