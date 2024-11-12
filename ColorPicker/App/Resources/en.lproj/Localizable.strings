@@ -15,3 +15,12 @@
 "base.close" = "Close";
 "base.attention" = "Attention";
 "base.oops" = "Oops, Something went wrong";
+
+// Onboarding
+"onboarding.title1" = "Get healthy and live peacefully";
+"onboarding.description1" = "Living a happier, more satisfied life is within reach.";
+"onboarding.title2" = "Predict weather";
+"onboarding.description2" = "Predict weather trends and conditions with current solar activity.";
+"onboarding.title3" = "Get air quality information";
+"onboarding.description3" = "Immediate, accurate air quality data to help you create a healthier environment.";
+"onboarding.get.started" = "Get Started";
