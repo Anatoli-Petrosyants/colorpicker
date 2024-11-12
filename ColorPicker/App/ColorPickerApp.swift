@@ -9,13 +9,12 @@ import SwiftUI
 
 @main
 struct ColorPickerApp: App {
+    @State private var changedTitle: String = "test"
+    
     var body: some Scene {
         WindowGroup {
             VStack {
-                Image(systemName: "globe")
-                    .imageScale(.large)
-                    .foregroundStyle(.tint)
-                Text("Hello, world!")
+                
             }
             .padding()
             .onAppear {
@@ -24,3 +23,31 @@ struct ColorPickerApp: App {
         }
     }
 }
+
+//PlayerView(title: changedTitle)
+//
+//Button("Change title") {
+//    changedTitle = "Change"
+//}
+
+//struct PlayerView: View {
+//    let title: String
+//    @State private var isPlaying: Bool = false
+//    
+//    var body: some View {
+//        VStack {
+//            // Display information about the episode.
+//            Text(title)
+//
+//            Button(action: {
+//                self.isPlaying.toggle()
+//            }) {
+//                Image(systemName: isPlaying ? "pause.circle" : "play.circle")
+//            }
+//        }
+//    }
+//}
+//
+//#Preview {
+//    PlayerView(title: "test")
+//}

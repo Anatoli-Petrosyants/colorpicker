@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A97EB8FC2CE37A8200DBE06C /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = A97EB8FB2CE37A8200DBE06C /* Lottie */; };
 		A9EB48062CE21E73005A7056 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = A9EB48052CE21E73005A7056 /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
 
@@ -28,6 +29,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9EB48062CE21E73005A7056 /* ComposableArchitecture in Frameworks */,
+				A97EB8FC2CE37A8200DBE06C /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,6 +73,7 @@
 			name = ColorPicker;
 			packageProductDependencies = (
 				A9EB48052CE21E73005A7056 /* ComposableArchitecture */,
+				A97EB8FB2CE37A8200DBE06C /* Lottie */,
 			);
 			productName = Spinpick;
 			productReference = A9EB47E72CE21B76005A7056 /* ColorPicker.app */;
@@ -106,6 +109,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				A9EB48042CE21E73005A7056 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				A97EB8FA2CE37A8200DBE06C /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A9EB47E82CE21B76005A7056 /* Products */;
@@ -437,6 +441,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		A97EB8FA2CE37A8200DBE06C /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.5.0;
+			};
+		};
 		A9EB48042CE21E73005A7056 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
@@ -448,6 +460,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		A97EB8FB2CE37A8200DBE06C /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A97EB8FA2CE37A8200DBE06C /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
 		A9EB48052CE21E73005A7056 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = A9EB48042CE21E73005A7056 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
