@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A97EB8FC2CE37A8200DBE06C /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = A97EB8FB2CE37A8200DBE06C /* Lottie */; };
+		A97EBA952CE4D8DF00DBE06C /* ColorName in Frameworks */ = {isa = PBXBuildFile; productRef = A97EBA942CE4D8DF00DBE06C /* ColorName */; };
 		A9EB48062CE21E73005A7056 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = A9EB48052CE21E73005A7056 /* ComposableArchitecture */; };
 /* End PBXBuildFile section */
 
@@ -29,6 +30,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9EB48062CE21E73005A7056 /* ComposableArchitecture in Frameworks */,
+				A97EBA952CE4D8DF00DBE06C /* ColorName in Frameworks */,
 				A97EB8FC2CE37A8200DBE06C /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,6 +76,7 @@
 			packageProductDependencies = (
 				A9EB48052CE21E73005A7056 /* ComposableArchitecture */,
 				A97EB8FB2CE37A8200DBE06C /* Lottie */,
+				A97EBA942CE4D8DF00DBE06C /* ColorName */,
 			);
 			productName = Spinpick;
 			productReference = A9EB47E72CE21B76005A7056 /* ColorPicker.app */;
@@ -110,6 +113,7 @@
 			packageReferences = (
 				A9EB48042CE21E73005A7056 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
 				A97EB8FA2CE37A8200DBE06C /* XCRemoteSwiftPackageReference "lottie-ios" */,
+				A97EBA932CE4D8DF00DBE06C /* XCRemoteSwiftPackageReference "ColorName" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = A9EB47E82CE21B76005A7056 /* Products */;
@@ -452,6 +456,14 @@
 				minimumVersion = 4.5.0;
 			};
 		};
+		A97EBA932CE4D8DF00DBE06C /* XCRemoteSwiftPackageReference "ColorName" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jiachenyee/ColorName";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		A9EB48042CE21E73005A7056 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture";
@@ -467,6 +479,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = A97EB8FA2CE37A8200DBE06C /* XCRemoteSwiftPackageReference "lottie-ios" */;
 			productName = Lottie;
+		};
+		A97EBA942CE4D8DF00DBE06C /* ColorName */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A97EBA932CE4D8DF00DBE06C /* XCRemoteSwiftPackageReference "ColorName" */;
+			productName = ColorName;
 		};
 		A9EB48052CE21E73005A7056 /* ComposableArchitecture */ = {
 			isa = XCSwiftPackageProductDependency;

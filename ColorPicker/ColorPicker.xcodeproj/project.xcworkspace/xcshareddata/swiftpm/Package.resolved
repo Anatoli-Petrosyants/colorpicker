@@ -1,6 +1,15 @@
 {
-  "originHash" : "7bc15c90f08dffb18a2dd087710847b929f72fa1621a984518824de7896e3ffb",
+  "originHash" : "338180da386c1593bad7e4ce413816bce4b8961381632423f82caaf7ebd7db91",
   "pins" : [
+    {
+      "identity" : "colorname",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/jiachenyee/ColorName",
+      "state" : {
+        "revision" : "45c584f8586ac57031519f025e84686526a148f9",
+        "version" : "1.0.0"
+      }
+    },
     {
       "identity" : "combine-schedulers",
       "kind" : "remoteSourceControl",
