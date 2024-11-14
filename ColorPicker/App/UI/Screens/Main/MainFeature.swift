@@ -7,7 +7,6 @@
 
 import SwiftUI
 import ComposableArchitecture
-import ColorName
 
 @Reducer
 struct MainFeature {
@@ -15,8 +14,8 @@ struct MainFeature {
     @ObservableState
     struct State {
         var color = UIColor.clear
-        var colorName = ""
-        var colorHex = ""
+        var currentPalette: Palette = Palette.clear
+        var palettes: [Palette] = []
     }
     
     enum Action: BindableAction {
@@ -32,12 +31,12 @@ struct MainFeature {
           switch action {
 
           case .onTapColor:
+              let palette = state.color.palette
+              state.palettes.append(palette)
               return .none
 
           case .binding(\.color):
-              // state.colorName = state.color.colorName().valueOr("")
-              state.colorName = getName(for: state.color)
-              state.colorHex = state.color.toHex()
+              state.currentPalette = state.color.palette
               return .none
 
           case .binding:

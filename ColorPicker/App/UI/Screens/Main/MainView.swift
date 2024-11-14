@@ -42,11 +42,11 @@ struct MainView {
                 }
                 .buttonStyle(.plain)
                 
-                Text(store.colorName)
+                Text(store.currentPalette.name)
                     .font(.body)
                     .bold()
                 
-                Text(store.colorHex)
+                Text(store.currentPalette.hex)
                     .font(.footnote)
                     .foregroundStyle(.gray)
             }

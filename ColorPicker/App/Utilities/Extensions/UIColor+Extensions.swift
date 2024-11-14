@@ -46,6 +46,22 @@ extension UIColor {
     }
 }
 
+extension UIColor {
+    
+    /// Returns the RGB and alpha components of the UIColor as a tuple.
+    var rgbValues: (red: CGFloat, green: CGFloat, blue: CGFloat, alpha: CGFloat)? {
+        var red: CGFloat = 0
+        var green: CGFloat = 0
+        var blue: CGFloat = 0
+        var alpha: CGFloat = 0
+        
+        let success = self.getRed(&red, green: &green, blue: &blue, alpha: &alpha)
+        
+        // Only return the values if the color components were successfully retrieved
+        return success ? (red, green, blue, alpha) : nil
+    }
+}
+
 import UIKit
 
 extension UIColor {
