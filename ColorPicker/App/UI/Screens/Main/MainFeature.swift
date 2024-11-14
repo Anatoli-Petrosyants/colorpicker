@@ -19,8 +19,12 @@ struct MainFeature {
     }
     
     enum Action: BindableAction {
-        case onTapColor
+        enum ViewAction {
+            case onTapColor
+        }
+        
         case binding(BindingAction<State>)
+        case view(ViewAction)
     }
 
     
@@ -28,12 +32,14 @@ struct MainFeature {
         BindingReducer()
         
         Reduce { state, action in
-          switch action {
-
-          case .onTapColor:
-              let palette = state.color.palette
-              state.palettes.append(palette)
-              return .none
+          switch action {              
+          case let .view(viewAction):
+              switch viewAction {
+              case .onTapColor:
+                  let palette = state.color.palette
+                  state.palettes.append(palette)
+                  return .none
+              }
 
           case .binding(\.color):
               state.currentPalette = state.color.palette

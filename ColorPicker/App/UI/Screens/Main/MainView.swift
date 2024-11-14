@@ -15,8 +15,8 @@ struct MainView {
 
     var body: some View {
         ZStack {
-            CameraView(centerColor: $store.color)
-                .edgesIgnoringSafeArea(.all)
+//            CameraView(centerColor: $store.color)
+//                .edgesIgnoringSafeArea(.all)
             
             ZStack {
                 Circle()
@@ -32,15 +32,37 @@ struct MainView {
 
                 Spacer()
                 
-                Button {
-                    store.send(.onTapColor)
-                } label: {
-                    Circle()
-                        .fill(Color(uiColor: store.color))
-                        .frame(width: 60, height: 60)
-                        .overlay(Circle().stroke(Color.white, lineWidth: 2))
+                HStack {
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "photo")
+                            .font(.title2)
+                    }
+                    
+                    Spacer()
+                    
+                    Button {
+                        store.send(.view(.onTapColor))
+                    } label: {
+                        Circle()
+                            .fill(Color(uiColor: store.color))
+                            .frame(width: 60, height: 60)
+                            .overlay(Circle().stroke(Color.white, lineWidth: 2))
+                    }
+                    .buttonStyle(.plain)
+                    
+                    Spacer()
+                    
+                    Button {
+                        
+                    } label: {
+                        Image(systemName: "circle.hexagonpath.fill")
+                            .font(.title2)
+                    }
                 }
-                .buttonStyle(.plain)
+                .tint(.white)
+                .padding(.horizontal, 40)
                 
                 Text(store.currentPalette.name)
                     .font(.body)
