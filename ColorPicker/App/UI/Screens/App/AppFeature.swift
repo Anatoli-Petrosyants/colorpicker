@@ -16,7 +16,7 @@ struct AppFeature {
     enum State {
         case loading(LoadingFeature.State)
         case onboarding(OnboardingFeature.State)
-        case main(MainFeature.State)
+        case home(HomeFeature.State)
 
         public init() { self = .loading(LoadingFeature.State()) }
     }
@@ -32,7 +32,7 @@ struct AppFeature {
         
         case loading(LoadingFeature.Action)
         case onboarding(OnboardingFeature.Action)
-        case main(MainFeature.Action)
+        case home(HomeFeature.Action)
     }
     
     @Dependency(\.userDefaultsClient) var userDefaultsClient
@@ -60,7 +60,7 @@ struct AppFeature {
                 switch loadingAction {
                 case .didLoaded:
                     if self.userDefaultsClient.hasShownFirstLaunchOnboarding {
-                        state = .main(MainFeature.State())
+                        state = .home(HomeFeature.State())
                     } else {
                         state = .onboarding(OnboardingFeature.State())
                     }
@@ -70,11 +70,11 @@ struct AppFeature {
             case let .onboarding(action: .delegate(onboardingAction)):
                 switch onboardingAction {
                 case .didOnboardingFinished:
-                    state = .main(MainFeature.State())
+                    state = .home(HomeFeature.State())
                     return .none
                 }
 
-            case .loading, .onboarding, .main:
+            case .loading, .onboarding, .home:
                 return .none
             }
         }
@@ -84,8 +84,8 @@ struct AppFeature {
         .ifCaseLet(\.onboarding, action: \.onboarding) {
             OnboardingFeature()
         }
-        .ifCaseLet(\.main, action: \.main) {
-            MainFeature()
+        .ifCaseLet(\.home, action: \.home) {
+            HomeFeature()
         }
     }
 }

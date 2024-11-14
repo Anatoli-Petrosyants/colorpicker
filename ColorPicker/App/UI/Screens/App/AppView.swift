@@ -34,9 +34,9 @@ extension AppView: View {
                 OnboardingView(store: store)
                     .transition(.delayAndFade)
             }
-        case .main:
-            if let store = store.scope(state: \.main, action: \.main) {
-                MainView(store: store)
+        case .home:
+            if let store = store.scope(state: \.home, action: \.home) {
+                HomeView(store: store)
                     .transition(.delayAndFade)
             }
         }

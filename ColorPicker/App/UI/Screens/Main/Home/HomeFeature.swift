@@ -1,5 +1,5 @@
 //
-//  MainFeature.swift
+//  HomeFeature.swift
 //  ColorPicker
 //
 //  Created by Anatoli Petrosyants on 12.11.24.
@@ -9,7 +9,7 @@ import SwiftUI
 import ComposableArchitecture
 
 @Reducer
-struct MainFeature {
+struct HomeFeature {
     
     @ObservableState
     struct State {

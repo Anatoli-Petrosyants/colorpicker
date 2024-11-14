@@ -1,5 +1,5 @@
 //
-//  MainView.swift
+//  HomeView.swift
 //  ColorPicker
 //
 //  Created by Anatoli Petrosyants on 12.11.24.
@@ -8,16 +8,16 @@
 import SwiftUI
 import ComposableArchitecture
 
-// MARK: - MainView
+// MARK: - HomeView
 
-struct MainView {
-    @Bindable var store: StoreOf<MainFeature>
+struct HomeView: View {
+    @Bindable var store: StoreOf<HomeFeature>
 
     var body: some View {
         ZStack {
 //            CameraView(centerColor: $store.color)
 //                .edgesIgnoringSafeArea(.all)
-            
+
             ZStack {
                 Circle()
                     .stroke(Color.white, lineWidth: 1.6)
@@ -29,7 +29,6 @@ struct MainView {
             }
 
             VStack(alignment: .center) {
-
                 Spacer()
                 
                 HStack {
@@ -76,22 +75,15 @@ struct MainView {
     }
 }
 
-// MARK: - Views
-
-extension MainView: View {
-    
-    
-}
-
 #if DEBUG
 // MARK: - Previews
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        MainView(
+        HomeView(
             store:
-                Store(initialState: MainFeature.State(), reducer: {
-                    MainFeature()
+                Store(initialState: HomeFeature.State(), reducer: {
+                    HomeFeature()
                 })
         )
     }
