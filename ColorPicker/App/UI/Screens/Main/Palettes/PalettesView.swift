@@ -10,30 +10,22 @@ import ComposableArchitecture
 
 // MARK: - PalettesView
 
-struct PalettesView: View {
-    @Bindable var store: StoreOf<HomeFeature>
+struct PalettesView {
+    let store: StoreOf<PalettesFeature>
+}
 
+// MARK: - Views
+
+extension PalettesView: View {
     var body: some View {
-        VStack {
-            Text("Palettes", store.count)
-        }
-        .onAppear {
-            store.send(.view(.onAppear))
-        }
+        content
+            .onAppear {
+                store.send(.view(.onAppear))
+            }
+    }
+    
+    @ViewBuilder
+    private var content: some View {
+        Text("All Color")// , store.count
     }
 }
-
-#if DEBUG
-// MARK: - Previews
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        PalettesView(
-            store:
-                Store(initialState: HomeFeature.State(), reducer: {
-                    HomeFeature()
-                })
-        )
-    }
-}
-#endif

@@ -10,13 +10,30 @@ import ComposableArchitecture
 
 // MARK: - HomeView
 
-struct HomeView: View {
+struct HomeView {
     @Bindable var store: StoreOf<HomeFeature>
+}
 
+// MARK: - Views
+
+extension HomeView: View {
+    
     var body: some View {
+        NavigationStack(path: $store.scope(state: \.path, action: \.path)) {
+            content
+                .defaultNavigationBar()
+        } destination: { store in
+           switch store.case {
+           case let .palettes(store):
+               PalettesView(store: store)
+           }
+       }
+    }
+
+    @ViewBuilder private var content: some View {
         ZStack {
-//            CameraView(centerColor: $store.color)
-//                .edgesIgnoringSafeArea(.all)
+            CameraView(centerColor: $store.color)
+                .edgesIgnoringSafeArea(.all)
 
             ZStack {
                 Circle()
@@ -54,7 +71,7 @@ struct HomeView: View {
                     Spacer()
                     
                     Button {
-                        
+                        store.send(.view(.onTapPalettes))
                     } label: {
                         Image(systemName: "circle.hexagonpath.fill")
                             .font(.title2)

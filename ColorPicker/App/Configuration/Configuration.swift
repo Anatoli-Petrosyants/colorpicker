@@ -12,7 +12,7 @@ import Foundation
 import UIKit
 
 public enum BuildConfiguration: String {
-    case development
+    case debug
     case qa
     case release
 }
@@ -66,8 +66,8 @@ public class Configuration {
         }
         
         #if DEBUG
-        if let developmentConfig = config["Development"] as? [AnyHashable: Any] {
-            dict.addEntries(from: developmentConfig)
+        if let debugConfig = config["Debug"] as? [AnyHashable: Any] {
+            dict.addEntries(from: debugConfig)
         }
         #elseif QA
         if let qaConfig = config["QA"] as? [AnyHashable: Any] {
@@ -87,7 +87,7 @@ extension Configuration: ColorPickerConfiguration {
     
     var buildConfiguration: BuildConfiguration {
         #if DEBUG
-        return BuildConfiguration.development
+        return BuildConfiguration.debug
         #elseif QA
         return BuildConfiguration.qa
         #elseif RELEASE

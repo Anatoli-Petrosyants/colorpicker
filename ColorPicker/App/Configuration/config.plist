@@ -11,10 +11,10 @@
 		<key>clientId</key>
 		<string>showcase</string>
 	</dict>
-	<key>Development</key>
+	<key>Debug</key>
 	<dict>
 		<key>build_configuration</key>
-		<string>development</string>
+		<string>debug</string>
 		<key>base_url</key>
 		<string>https://fakestoreapi.com</string>
 	</dict>

@@ -12,9 +12,8 @@ import ComposableArchitecture
 struct PalettesFeature {
     
     @ObservableState
-    struct State {
-        var count = 0
-        var palettes: [Palette] = []
+    struct State: Equatable {
+        var palettes: [Palette] = []        
     }
     
     enum Action {
@@ -24,7 +23,6 @@ struct PalettesFeature {
         
         case view(ViewAction)
     }
-
     
     var body: some Reducer<State, Action> {
         Reduce { state, action in
@@ -32,7 +30,6 @@ struct PalettesFeature {
           case let .view(viewAction):
               switch viewAction {
               case .onAppear:
-                  state.count = state.palettes.count
                   return .none
               }
           }
