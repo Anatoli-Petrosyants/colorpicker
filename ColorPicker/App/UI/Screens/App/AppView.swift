@@ -13,7 +13,7 @@ import ComposableArchitecture
 struct AppView {
     let store: StoreOf<AppFeature>
 }
-
+  
 // MARK: - Views
 
 extension AppView: View {

@@ -98,7 +98,7 @@ class CameraViewController: UIViewController, AVCaptureVideoDataOutputSampleBuff
               CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height).contains(point) else {
             return UIColor.clear
         }
-
+                    
         // Define properties for the 1x1 pixel context
         let pointX = Int(point.x)
         let pointY = Int(point.y)

@@ -23,68 +23,26 @@ struct MainFeature {
         case onTapColor
         case binding(BindingAction<State>)
     }
+
     
     var body: some Reducer<State, Action> {
         BindingReducer()
         
         Reduce { state, action in
-            switch action {
-                
-            case .onTapColor:
-                return .none
-            
-            case .binding(\.color):
-                let name = getName(for: state.color)
-                if state.colorName != name {
-                    state.colorName = name
-                }
-                
-                state.colorHex = state.color.toHex()
-                
-                return .none
-                
-            case .binding:
-                return .none
-            }
-        }
-    }
-}
+          switch action {
 
-extension UIColor {
-    func toHex() -> String {
-        var red: CGFloat = 0
-        var green: CGFloat = 0
-        var blue: CGFloat = 0
-        var alpha: CGFloat = 0
+          case .onTapColor:
+              return .none
 
-        guard self.getRed(&red, green: &green, blue: &blue, alpha: &alpha) else {
-            assertionFailure("Failed to get RGBA components from UIColor")
-            return "#000000"
-        }
+          case .binding(\.color):
+              // state.colorName = state.color.colorName().valueOr("")
+              state.colorName = getName(for: state.color)
+              state.colorHex = state.color.toHex()
+              return .none
 
-        // Clamp components to [0.0, 1.0]
-        red = max(0, min(1, red))
-        green = max(0, min(1, green))
-        blue = max(0, min(1, blue))
-        alpha = max(0, min(1, alpha))
-
-        if alpha == 1 {
-            // RGB
-            return String(
-                format: "#%02lX%02lX%02lX",
-                Int(round(red * 255)),
-                Int(round(green * 255)),
-                Int(round(blue * 255))
-            )
-        } else {
-            // RGBA
-            return String(
-                format: "#%02lX%02lX%02lX%02lX",
-                Int(round(red * 255)),
-                Int(round(green * 255)),
-                Int(round(blue * 255)),
-                Int(round(alpha * 255))
-            )
+          case .binding:
+              return .none
+          }
         }
     }
 }
